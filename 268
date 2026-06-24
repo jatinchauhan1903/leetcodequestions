@@ -1,0 +1,35 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+
+        for (int i = 0; i <= n; i++) {
+            int x = 0; // reset for each i
+
+            for (int j = 0; j < n; j++) {
+                if (nums[j] == i) {
+                    x = 1;
+                    break;
+                }
+            }
+
+            if (x == 0) {
+                return i;
+            }
+        }
+
+        return 0;
+    }
+}
+
+
+//class Solution {
+//    public int missingNumber(int[] nums) {
+//       int sum=0;
+//       for(int i=0;i<nums.length;i++)
+//       {
+//        sum+=nums[i];
+//       }
+//       int total_sum = (nums.length)*(nums.length+1)/2;
+//       return total_sum-sum;
+//    }
+//}
